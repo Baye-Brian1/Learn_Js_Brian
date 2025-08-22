@@ -220,10 +220,11 @@ p{
   /* top: 0%; */
 }
 .prev{
-  left: 285px;
+  right: 245px;
+  
 }
 .next{
-  right: 245px;
+  left: 285px;
 }
 .prev:hover, .next:hover, .close-btn:hover{
   color: hsl(26, 100%, 55%);

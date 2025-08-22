@@ -33,11 +33,11 @@
     <!-- 1st div -->
       <div class="box1">
         <img src="./images/image-product-1.jpg" alt="main pic" class="mainpic" id="gallery-pop">
-        <div class="pics">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="one" class="pic">
-          <img src="./images/image-product-2-thumbnail.jpg" alt="two" class="pic">
-          <img src="./images/image-product-3-thumbnail.jpg" alt="three" class="pic">
-          <img src="./images/image-product-4-thumbnail.jpg" alt="four" class="pic">
+        <div class="pics" id="pics">
+          <img src="./images/image-product-1-thumbnail.jpg" data-id="1" id="pic" alt="one" class="pic">
+          <img src="./images/image-product-2-thumbnail.jpg" data-id="2" id="pic"  alt="two" class="pic">
+          <img src="./images/image-product-3-thumbnail.jpg" data-id="3" id="pic"  alt="three" class="pic">
+          <img src="./images/image-product-4-thumbnail.jpg" data-id="4" id="pic"  alt="four" class="pic">
         </div>
       </div>
       
@@ -45,13 +45,13 @@
        <div id="gallery-container" style="display: none;">
         <div id="gallery-lay"></div>
         <div id="gallery">
-          <div class="galleryhead">
-            <img src="./images/icon-close.svg" alt="close" class="close-btn"  onclick="closeGallery()">
+          <div class="galleryhead" >
+            <img src="./images//icon-close.svg" id="pic" alt="close" class="close-btn"  onclick="closeGallery()">
           </div>
-          <img src="./images/image-product-1.jpg" alt="one" class="pics1" id="gallery-image">
+          <img src="" alt="one" class="pics1" id="gallery-image">
           <div class="galnav">
-            <button class="next" onclick="changeSlide(1)"> > </button>
-            <button class="prev" onclick="changeSlide(-1)"> < </button>
+            <button class="prev" id="prev"> < </button>
+            <button class="next" id="next"> > </button>
           </div>
         </div>
 

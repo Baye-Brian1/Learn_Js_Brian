@@ -30,10 +30,10 @@ const minus= document.getElementById('minus');
  })
 
  const images=[
-  {src:"image-product-1.jpg"},
-  {src:"image-product-2.jpg"},
-  {src:"image-product-3.jpg"},
-  {src:"image-product-4.jpg"}
+  {src:"./images/image-product-1.jpg", id:1},
+  {src:"./images/image-product-2.jpg", id:2},
+  {src:"./images/image-product-3.jpg", id:3},
+  {src:"./images/image-product-4.jpg", id:4}
  ];
  console.log(images)
  let currentImageIndex= 0; 
@@ -47,16 +47,9 @@ const minus= document.getElementById('minus');
   function closeGallery() {
     document.getElementById('gallery-container').style.display='none'; 
   }
-  function changeSlide(step){
-    currentImageIndex +=step;
-    if (currentImageIndex < 0) 
-      currentImageIndex= images.length-1;
-        if (currentImageIndex >= images.length) 
-          currentImageIndex= 0;
-        showImage();
-    }
+  
     function showImage() {
-    const modalImage =document.getElementById("gallery-container");
+    const modalImage =document.getElementById("gallery-image");
     modalImage.src= images[currentImageIndex].src
     }
     // let cart=[]
@@ -66,3 +59,20 @@ const minus= document.getElementById('minus');
 
     //     modal.style.display='flex';
     //   })
+
+    const next=document.getElementById('next')
+    const prev=document.getElementById('prev')
+    
+    const handlenext=()=>{
+      currentImageIndex=(currentImageIndex+1)%images.length;
+      showImage()
+    } 
+    const handleprev=()=>{
+      currentImageIndex=(currentImageIndex-1 + images.length)%images.length
+      showImage()
+
+    }
+
+    next.addEventListener('click', handlenext)
+    prev.addEventListener('click', handleprev)
+    showImage()
