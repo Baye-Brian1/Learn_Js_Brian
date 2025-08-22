@@ -59,16 +59,10 @@ const minus= document.getElementById('minus');
     const modalImage =document.getElementById("gallery-container");
     modalImage.src= images[currentImageIndex].src
     }
-    let cart=[]
-     const cartIcon= document.getElementById('cart-icon').addEventListener('click', 
-      function(){
-        const modal= document.getElementById('modal-content');
-        const cartItem= document.getElementById('card-item');
-        if (cart.length===0){
-          cartItem.innerHTML= "<p>Your Cart is empty</p>"
-        }else{
-          cartItem.innerHTML= "<ul>"+ cart.map(item =>
-            '<li>${item}</li>').join("") +"</ul>";
-        }
-        modal.style.display='flex';
-      })
+    // let cart=[]
+    //  const cartIcon= document.getElementById('cart-icon').addEventListener('click', 
+    //   function(){
+    //     const modal= document.getElementById('modal-content');
+
+    //     modal.style.display='flex';
+    //   })
