@@ -16,15 +16,12 @@ ul{
   gap: 10px;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin-left: -550px;
-  
-
+  /* margin-left: -550px; */
 }
 ul a{
   display: flex;
   text-decoration: none;
   color: hsl(219, 9%, 45%);
-  transform: scale(1.1);
 }
 a:hover{
   border-bottom: 3px solid hsl(26, 100%, 55%);
