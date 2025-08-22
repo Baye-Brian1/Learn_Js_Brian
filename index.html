@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
 <body>
+  <!-- navbar -->
   <nav class="navbar">
-    <img src="./images/logo.svg" alt="logo" class="logo">
-    <ul>
+    <img src="./images/icon-menu.svg" alt="menu" id="harmburger">
+    <img src="./images/icon-close.svg" alt="close" id="close" style="display: none;" >
+    <img src="./images/logo.svg" alt="logo" class="logo"><br>
+    <ul id="nav-links">
       <li><a href="#">Collections</a></li>
       <li><a href="#">Men</a></li>
       <li><a href="#">Women</a></li>
@@ -18,41 +22,70 @@
       <li><a href="#">Contacts</a></li>
     </ul>
     <div class="avatar">
-      <img src="./images/icon-cart.svg" alt="cart">
-      <img src="./images/image-avatar.png" alt="avt">
+      <img src="./images/icon-cart.svg" alt="cart" clas="avtcart" id="cart-icon">
+      <img src="./images/image-avatar.png" alt="avt" class="avt">
     </div>
   </nav>
-  <section>
-    <div class="main">
-      <div class="img">
-        <img src="./images/image-product-1.jpg" alt="main pic">
+  <!-- line -->
+  <div class="headline"></div>
+  <!-- main body -->
+  <section class="main">
+    <!-- 1st div -->
+      <div class="box1">
+        <img src="./images/image-product-1.jpg" alt="main pic" class="mainpic" id="gallery-pop">
         <div class="pics">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="one">
-          <img src="./images/image-product-2-thumbnail.jpg" alt="two">
-          <img src="./images/image-product-3-thumbnail.jpg" alt="three">
-          <img src="./images/image-product-4-thumbnail.jpg" alt="four">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="one" class="pic">
+          <img src="./images/image-product-2-thumbnail.jpg" alt="two" class="pic">
+          <img src="./images/image-product-3-thumbnail.jpg" alt="three" class="pic">
+          <img src="./images/image-product-4-thumbnail.jpg" alt="four" class="pic">
         </div>
       </div>
-      <div class="text">
-        <h3>SNEAKER COMPANY</h3>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>These low-profile Sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole. they'll withstand everything the weather can offer</p>
-        <div class="dollars">
-          <p>$125.00</p>
-          <button class="btn">50%</button>
+      
+      <!-- gallery container -->
+       <div id="gallery-container" style="display: none;">
+        <div id="gallery-lay"></div>
+        <div id="gallery">
+          <div class="galleryhead">
+            <img src="./images/icon-close.svg" alt="close" class="close-btn"  onclick="closeGallery()">
+          </div>
+          <img src="./images/image-product-1.jpg" alt="one" class="pics1" id="gallery-image">
+          <div class="galnav">
+            <button class="next" onclick="changeSlide(1)"> > </button>
+            <button class="prev" onclick="changeSlide(-1)"> < </button>
+          </div>
         </div>
-        <p>$250.00</p>
+
+       </div>
+       <!-- cart -->
+        <div id="cartModal" class="modal">
+          <div class="modal-content">
+            <h3>Cart</h3>
+            <div class="cart-item"></div>
+          </div>
+        </div>
+      <!-- 2nd div -->
+      <div class="box2">
+        <h3>SNEAKER COMPANY</h3>
+        <h1>Fall Limited Edition <br> Sneakers</h1>
+        <p>These low-profile Sneakers are your perfect casual wear companion. <br> Featuring a durable rubber outer sole. they'll withstand everything <br> the weather can offer</p>
+        <div class="do">
+          <div class="dollars">
+            <p class="bb">$125.00</p>
+            <button class="btn">50%</button>
+          </div>
+          <p>$250.00</p>
+        </div>
         <div class="btns">
          <button class="num">
-          <img src="./images/icon-minus.svg" alt="minus">
-          <p>0</p>
-          <img src="./images/icon-plus.svg" alt="plus">
+          <img src="./images/icon-minus.svg" alt="minus" id="minus">
+          <p id="count">0</p>
+          <img src="./images/icon-plus.svg" alt="plus" id="plus">
          </button>
-         <button class="orangecart"><img src="./images/icon-cart.svg" alt="" class="blackcart">Add to Cart</button>
+         <button class="orangecart" onclick="addToCart()"><img src="./images/icon-cart.svg" alt="" class="blackcart">Add to Cart</button>
         </div>
       </div>
-    </div>
   </section>
+  <script src="script.js"></script>
 
   
   <!-- <div class="attribution">
