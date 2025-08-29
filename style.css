@@ -5,23 +5,24 @@ body{
 .navbar{
   display: flex;
   width: 100vw;
-  justify-content: space-around;
+  justify-content: space-evenly;
   color: hsl(219, 9%, 45%);
   align-items: center;
 }
 ul{
   display: flex;
-  padding: 10px;
   list-style: none;
-  gap: 10px;
+  gap: 25px;
+  font-size: 16px;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* margin-left: -550px; */
+  right: 600px;
 }
 ul a{
   display: flex;
   text-decoration: none;
   color: hsl(219, 9%, 45%);
+  right: 600px;
 }
 a:hover{
   border-bottom: 3px solid hsl(26, 100%, 55%);
@@ -29,16 +30,20 @@ a:hover{
 }
 .avatar{
   display: flex;
-  gap: 50px;
+  gap: 30px;
   padding: 20px;
+  align-items: center;
 }
 .avatar .avtcart{
-  width: 5px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0);
 }
 .avatar .avt{
   width: 35px;
   height: 35px;
+  border: 3px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
 }
 .headline{
   width: 1000px;
@@ -48,12 +53,12 @@ a:hover{
   margin-bottom: 1px;
 }
 .main{
-  width: 100%;
-  height: 100%;
+  margin: 0, auto;
   display: flex;
   gap: 90px;
   justify-content: center;
   align-items: center;
+
 }
 .box1 .mainpic{
   width: 270px;
@@ -97,6 +102,9 @@ a:hover{
   font-size: 12px;
   font-weight: 400;
 }
+.reduct{
+  text-decoration: line-through;
+}
 .dollars .bb{
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -122,11 +130,18 @@ p{
   align-items: center;
   width: 180px;
   padding: 5px;
-  height: 35px;
+  height: 23px;
   justify-content: space-between;
   border-radius: 5px;
-  background-color:  rgba(rgb(250, 250, 250), rgb(245, 249, 245), rgb(244, 244, 247), 0.1);
-  border: 1px solid white;
+  background-color:   rgb(214, 214, 214);
+  border: 1px solid rgb(214, 214, 214);
+}
+#count{
+  border: none;
+  background-color: rgb(214, 214, 214);
+  width: 30px;
+  text-align: center;
+  outline: none;
 }
 .orangecart{
   align-items: center;
@@ -233,19 +248,61 @@ p{
   display: none;
   position: fixed;
   z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 80px;
+  right: 20px;
+  width: 250px;
+  height: 100px;
   align-items: center;
   justify-content: center;
+  font-size: 12px;
+} 
+.headliner{
+  width: 240px;
+  border-bottom: 1px solid rgb(237, 236, 236);
 }
-.modal-content{
+.cart{
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 12px;
   align-items: center;
   box-shadow: 0 56px 15px rgba(0,0,0,0.3);
+  font-size: 12px;
+}
+.cart-item{
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  align-items: center;
+}
+.cart-count { 
+    position: absolute; 
+    top: 22px; 
+    right: 212px; 
+    background-color: hsl(26, 100%, 55%); 
+    color: white; 
+    border-radius: 50%; 
+    padding: 2px 6px; 
+    font-size: 8px; 
+}
+.orange{
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  width: 180px;
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px;
+  color: black;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  background-color:  hsl(26, 100%, 55%);
+  border: 1px solid  hsl(26, 100%, 55%);
+}
+.bol{
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }
 @media (max-width: 768px) {
   .navbar ul{
@@ -309,4 +366,42 @@ p{
   .box2 .h1{
     font-size: 10px;
   }
+.prev, .next{
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+  margin-top: -50px;
+  position: absolute;
+  user-select: none;
+  /* top: 0%; */
+}
+.prev{
+  right: 245px;
+  
+}
+.next{
+  left: 285px;
+}
+.prev:hover, .next:hover, .close-btn:hover{
+  color: hsl(26, 100%, 55%);
+
+}
+.cart-count { 
+    position: absolute; 
+    top: 22px; 
+    right: 105px; 
+    background-color: hsl(26, 100%, 55%); 
+    color: white; 
+    border-radius: 60%; 
+    padding: 2px 6px; 
+    font-size: 8px; 
+}
 }

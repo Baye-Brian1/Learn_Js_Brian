@@ -21,12 +21,12 @@ const minus= document.getElementById('minus');
  plus.addEventListener('click', () =>
   {
     count++;
-    countElement.textContent= count;
+    countElement.value= count;
  })
  minus.addEventListener('click', () =>
   {
     count--;
-    countElement.textContent= count;
+    countElement.value= count;
  })
 
  const images=[
@@ -34,8 +34,7 @@ const minus= document.getElementById('minus');
   {src:"./images/image-product-2.jpg", id:2},
   {src:"./images/image-product-3.jpg", id:3},
   {src:"./images/image-product-4.jpg", id:4}
- ];
- console.log(images)
+ ]
  let currentImageIndex= 0; 
  document.getElementById('gallery-pop')
  .addEventListener('click', openGallery);
@@ -52,13 +51,7 @@ const minus= document.getElementById('minus');
     const modalImage =document.getElementById("gallery-image");
     modalImage.src= images[currentImageIndex].src
     }
-    // let cart=[]
-    //  const cartIcon= document.getElementById('cart-icon').addEventListener('click', 
-    //   function(){
-    //     const modal= document.getElementById('modal-content');
-
-    //     modal.style.display='flex';
-    //   })
+    
 
     const next=document.getElementById('next')
     const prev=document.getElementById('prev')
@@ -70,9 +63,5 @@ const minus= document.getElementById('minus');
     const handleprev=()=>{
       currentImageIndex=(currentImageIndex-1 + images.length)%images.length
       showImage()
-
     }
 
-    next.addEventListener('click', handlenext)
-    prev.addEventListener('click', handleprev)
-    showImage()
