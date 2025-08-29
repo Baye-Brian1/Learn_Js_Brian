@@ -16,13 +16,12 @@ ul{
   font-size: 16px;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  right: 600px;
 }
 ul a{
   display: flex;
   text-decoration: none;
   color: hsl(219, 9%, 45%);
-  right: 600px;
+  left: 10px;
 }
 a:hover{
   border-bottom: 3px solid hsl(26, 100%, 55%);
@@ -48,7 +47,7 @@ a:hover{
 .headline{
   width: 1000px;
   height: 1px;
-  background-color: hsl(219, 9%, 45%);
+  background-color: hsl(216, 6%, 85%);
   margin: 0 auto;
   margin-bottom: 1px;
 }
@@ -64,6 +63,7 @@ a:hover{
   width: 270px;
   height: 270px;
   border-radius: 15px;
+  margin-top: 20px;
 }
 .pics{
   display: flex;
@@ -80,11 +80,13 @@ a:hover{
   color: hsl(219, 9%, 45%);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
+  margin-top: 30px;
 }
 .box2 h1{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
-  border-bottom: -20px;
+  margin-bottom: -10px;
+  margin-top: -10px;
 }
 .dollars{
   display: flex;
@@ -277,7 +279,7 @@ p{
 .cart-count { 
     position: absolute; 
     top: 22px; 
-    right: 212px; 
+    right: 208px; 
     background-color: hsl(26, 100%, 55%); 
     color: white; 
     border-radius: 50%; 
