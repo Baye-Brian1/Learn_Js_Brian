@@ -316,6 +316,26 @@ p{
   font-weight: bold;
   color: black;
 }
+/* Mobile navigation buttons for main image */
+.mobile-btns {
+  display: none;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+.mobile-btn {
+  background: white;
+  border: 1px solid hsl(26, 100%, 55%);
+  color: hsl(26, 100%, 55%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 @media (max-width: 768px) {
   .navbar ul{
    display: none;
@@ -434,4 +454,11 @@ p{
   margin: 40px auto;
   text-align: center;
 }
+.mobile-btns { 
+  display: flex;
+}
+#mainpic {
+  pointer-events: none;
+ }
+
 }

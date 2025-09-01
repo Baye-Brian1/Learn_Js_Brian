@@ -28,16 +28,49 @@ const minus= document.getElementById('minus');
     count--;
     countElement.value= count;
  })
-const mainPic= document.querySelector('.mainpic');
-const Pic= document.querySelector('.pic');
+ 
+const thumbnails = document.querySelectorAll('.pic');
+const mainPic = document.querySelector('.mainpic');
+const mobilePrev = document.getElementById('mobile-prev');
+const mobileNext = document.getElementById('mobile-next');
 
+function getCurrentMainIndex() {
+  const src = mainPic.src.split('/').pop();
+  for (let i = 0; i < images.length; i++) {
+    if (src === images[i].src.split('/').pop()) return i;
+  }
+  return 0;
+}
 
+function setMainImageByIndex(idx) {
+  mainPic.src = images[idx].src;
+  thumbnails.forEach(tn => tn.classList.remove('active'));
+  if (thumbnails[idx]) thumbnails[idx].classList.add('active');
+}
 
-
-
-
-
-
+// Mobile prev/next navigation
+if (mobilePrev && mobileNext) {
+  mobilePrev.addEventListener('click', function(e) {
+    e.stopPropagation();
+    let idx = getCurrentMainIndex();
+    idx = (idx - 1 + images.length) % images.length;
+    setMainImageByIndex(idx);
+  });
+  mobileNext.addEventListener('click', function(e) {
+    e.stopPropagation();
+    let idx = getCurrentMainIndex();
+    idx = (idx + 1) % images.length;
+    setMainImageByIndex(idx);
+  });
+}
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', function() {
+    const id = this.getAttribute('data-id');
+    mainPic.src = `./images/image-product-${id}.jpg`;
+    thumbnails.forEach(tn => tn.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
 
  const images=[
   {src:"./images/image-product-1.jpg", id:1},
@@ -46,8 +79,8 @@ const Pic= document.querySelector('.pic');
   {src:"./images/image-product-4.jpg", id:4}
  ]
  let currentImageIndex= 0; 
- document.getElementById('gallery-pop')
- .addEventListener('click', openGallery);
+ document.getElementById('mainpic')
+  .addEventListener('click', openGallery);
   function openGallery() {
     currentImageIndex= 0;
     document.getElementById('gallery-container').style.display='block'; 
