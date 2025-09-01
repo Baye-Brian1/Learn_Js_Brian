@@ -4,7 +4,8 @@ body{
 }
 .navbar{
   display: flex;
-  width: 100vw;
+  max-width: 1170px;
+  margin: 0 auto;
   justify-content: space-evenly;
   color: hsl(219, 9%, 45%);
   align-items: center;
@@ -74,7 +75,13 @@ a:hover{
   width: 50px;
   height: 50px;
   border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
  
+}
+.pic.active{
+  border: 2px solid hsl(26, 100%, 55%);
 }
 .box2 h3{
   color: hsl(219, 9%, 45%);
@@ -248,15 +255,16 @@ p{
 }
 .modal{
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1000;
-  top: 80px;
-  right: 20px;
-  width: 250px;
+  top: 30px;
+  right: -150px;
+  width: 270px;
   height: 100px;
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  padding: 10px;
 } 
 .headliner{
   width: 240px;
@@ -267,8 +275,9 @@ p{
   padding: 10px;
   border-radius: 12px;
   align-items: center;
-  box-shadow: 0 56px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 30px 15px rgba(0,0,0,0.1);
   font-size: 12px;
+  font-weight: bolder;
 }
 .cart-item{
   display: flex;

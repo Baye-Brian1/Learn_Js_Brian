@@ -28,6 +28,16 @@ const minus= document.getElementById('minus');
     count--;
     countElement.value= count;
  })
+const mainPic= document.querySelector('.mainpic');
+const Pic= document.querySelector('.pic');
+
+
+
+
+
+
+
+
 
  const images=[
   {src:"./images/image-product-1.jpg", id:1},
@@ -77,17 +87,15 @@ const minus= document.getElementById('minus');
   const cartModal = document.querySelector('.modal'); 
   const cartContent = document.querySelector('.cart-item'); 
   const checkOut= document.querySelector('#check');
+    // Hide cart modal when clicking outside of it
+    document.addEventListener('click', function(e) {
+      if (cartModal.style.display === 'block' && !cartModal.contains(e.target) && !cartIcon.contains(e.target)) {
+        cartModal.style.display = 'none';
+      }
+    });
  
   let cartItems = []; // Array to store cart items 
  
- const totalQuantity=0 // Function to update the cart count 
-  // if (totalQuantity==0){
-  //    cartCount.style.display='none';
-  //   }
-  //   else{
-  //     cartCount.style.display='block';
-  //   };
-
   function updateCartCount() { 
     let totalQuantity = 0; 
     cartItems.forEach(item => { 
@@ -95,17 +103,6 @@ const minus= document.getElementById('minus');
     }); 
     cartCount.textContent = totalQuantity; 
   } 
-  cartIcon.addEventListener('click', function(e){
-     cartModal.style.display= cartModal.style.display==='block'?'none':'block';
-     displayCart();
-     e.stopPropagation();
-  });
-   cartIcon.addEventListener('click', function(e){
-    if (!cartModal.contains(e.target)&& !cartIcon.contains(e.target)){
-        cartModal.style.display='none';
-    }
-   });
- 
   // Function to display the cart modal 
  
   function displayCart() { 
@@ -120,11 +117,12 @@ const minus= document.getElementById('minus');
         const cartItemDiv = document.createElement('div'); 
         cartItemDiv.classList.add('cart-item');
         cartItemDiv.innerHTML = ` 
-          <img src="${item.image}" alt="square" style="width: 50px; border-radius: 5px; margin-left: -10px;"> 
-          <p>${item.title} <br>  ${item.price} x ${item.quantity} 
+          <img src="${item.image}" alt="square" style="width: 50px; border-radius: 5px; margin-left: -10px; margin-right:12px"> 
+          <p>${item.title} 
+            ${item.price} x ${item.quantity} 
              <span style="font-size: 12px; font-weight: bold; color: black;">$${(parseFloat(item.price.replace('$', ''))*item.quantity).toFixed(2)}</span>
           </p>
-           <img src="./images/icon-delete.svg" alt="delete" id="delete" style="width: 10px; height: 10px; margin-top: 10px">
+           <img src="./images/icon-delete.svg" alt="delete" id="delete" style="width: 10px; height: 10px; margin-top: 15px">
         `; 
         cartContent.appendChild(cartItemDiv); 
  
